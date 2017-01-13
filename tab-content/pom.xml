@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.tab</groupId>
+		<artifactId>tab-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>tab-content</artifactId>
+	<packaging>pom</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>com.tab</groupId>
+			<artifactId>tab-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tab</groupId>
+			<artifactId>tab-manager-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- 配置Tomcat插件 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<path>/</path>
+					<port>8083</port>
+				</configuration>
+			</plugin>
+			<!-- <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <path>/</path>
+                    <port>8083</port>
+                    <url>http://60.205.220.212:8083/manager/text</url>
+                    <username>qinteng</username>
+                    <password>qinteng</password>
+                </configuration>
+            </plugin> -->
+		</plugins>
+	</build>
+	<modules>
+		<module>tab-content-interface</module>
+		<module>tab-content-service</module>
+	</modules>
+</project>
